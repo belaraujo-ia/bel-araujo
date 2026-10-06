@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bell Araújo | UGC Creator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =====================================================
+       CONFIGURAÇÕES GERAIS
+    ===================================================== */
+
+    :root {
+      --creme: #f3eee4;
+      --verde: #0d5356;
+      --terracota: #b75a40;
+      --texto: #073f45;
+      --cinza: #6c6a65;
+      --linha: rgba(13, 83, 86, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--creme);
+      color: var(--texto);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    /* =====================================================
+       CAPA
+    ===================================================== */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      grid-template-columns: 51% 49%;
+      overflow: hidden;
+      background: var(--creme);
+    }
+
+    /* ---------------------
+       LADO ESQUERDO
+    --------------------- */
+
+    .hero-left {
+      padding: 58px 50px 50px 54px;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .portfolio-year {
+      position: absolute;
+      top: 58px;
+      left: 54px;
+      font-size: 11px;
+      letter-spacing: 9px;
+      color: #8d675d;
+      font-weight: 500;
+    }
+
+    .name {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+      font-size: clamp(90px, 9.2vw, 165px);
+      line-height: 0.72;
+      letter-spacing: -5px;
+      margin-top: 45px;
+      color: var(--texto);
+    }
+
+    .name span {
+      display: block;
+    }
+
+    .profession {
+      margin-top: 42px;
+      width: max-content;
+      padding-bottom: 13px;
+      border-bottom: 2px solid var(--texto);
+
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 10px;
+    }
+
+    .hero-copy {
+      margin-top: 58px;
+    }
+
+    .hero-copy h2 {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+      font-size: clamp(44px, 4vw, 69px);
+      line-height: 1.03;
+      letter-spacing: -1px;
+    }
+
+    .hero-copy em {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      color: var(--terracota);
+    }
+
+    .hero-description {
+      margin-top: 28px;
+      max-width: 700px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #54544f;
+    }
+
+
+    /* ---------------------
+       TAGS
+    --------------------- */
+
+    .tags {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      border: 1px solid rgba(13, 83, 86, 0.25);
+      border-radius: 30px;
+      padding: 10px 18px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+
+    /* ---------------------
+       BOTÕES
+    --------------------- */
+
+    .hero-buttons {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .btn {
+      height: 58px;
+      padding: 0 26px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--verde);
+      color: white;
+      min-width: 210px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #073f45;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--verde);
+      min-width: 210px;
+    }
+
+    .btn-outline:hover {
+      background: var(--verde);
+      color: white;
+    }
+
+    .arrow {
+      font-size: 25px;
+      font-weight: 300;
+    }
+
+
+    /* =====================================================
+       LADO DIREITO DA CAPA
+    ===================================================== */
+
+    .hero-right {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .green-shape {
+      position: absolute;
+      right: 0;
+      top: 7%;
+      width: 58%;
+      height: 93%;
+      background: var(--verde);
+      border-radius: 190px 0 0 0;
+    }
+
+    .terracotta-shape {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 55%;
+      height: 58%;
+      background: var(--terracota);
+      border-radius: 200px 0 0 0;
+    }
+
+    .photo-wrapper {
+      position: absolute;
+      z-index: 4;
+
+      width: 52%;
+      height: 69%;
+
+      top: 10%;
+      left: 24%;
+
+      overflow: hidden;
+      border-radius: 190px 190px 25px 25px;
+    }
+
+    .photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 28%;
+  transform: scale(1.12);
+  display: block;
+}
+}
+    }
+
+    .keywords {
+      position: absolute;
+      z-index: 5;
+      right: 5%;
+      top: 16%;
+
+      color: white;
+      font-size: 10px;
+      line-height: 2.2;
+      letter-spacing: 3px;
+      font-weight: 500;
+    }
+
+    .keywords::before {
+      content: "";
+      display: block;
+      width: 45px;
+      height: 1px;
+      background: white;
+      margin-bottom: 22px;
+    }
+
+    .possibilities {
+      position: absolute;
+      z-index: 5;
+      right: 4%;
+      bottom: 9%;
+      width: 220px;
+
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 37px;
+      line-height: 1.05;
+      text-align: right;
+    }
+
+    .heart {
+      margin-top: 16px;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+    }
+
+    .number {
+      position: absolute;
+      z-index: 5;
+      bottom: 7%;
+      left: 20%;
+
+      color: white;
+      font-size: 11px;
+      letter-spacing: 5px;
+      transform: rotate(-90deg);
+    }
+
+
+    /* =====================================================
+       SOBRE
+    ===================================================== */
+
+    .about {
+      min-height: 100vh;
+      background: var(--verde);
+      color: var(--creme);
+
+      position: relative;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 42% 58%;
+      align-items: center;
+
+      padding: 100px 7%;
+    }
+
+    .about-number {
+      position: absolute;
+      top: 65px;
+      left: 7%;
+
+      font-size: 11px;
+      letter-spacing: 8px;
+      color: rgba(255,255,255,0.6);
+    }
+
+
+    /* ---------------------
+       SOBRE - ELEMENTO VISUAL
+    --------------------- */
+
+    .about-visual {
+      position: relative;
+      height: 680px;
+    }
+
+    .about-circle {
+      position: absolute;
+      width: 510px;
+      height: 510px;
+
+      border-radius: 50%;
+      border: 1px solid rgba(243, 238, 228, 0.35);
+
+      top: 70px;
+      left: -160px;
+    }
+
+    .about-terracotta {
+      position: absolute;
+      width: 310px;
+      height: 440px;
+
+      background: var(--terracota);
+
+      border-radius: 160px 160px 0 0;
+
+      top: 130px;
+      left: 100px;
+    }
+
+    .about-word {
+      position: absolute;
+      z-index: 4;
+
+      top: 245px;
+      left: 20px;
+
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 72px;
+      font-weight: 400;
+
+      transform: rotate(-8deg);
+
+      color: var(--creme);
+    }
+
+    .about-mini {
+      position: absolute;
+      left: 115px;
+      bottom: 55px;
+
+      font-size: 10px;
+      letter-spacing: 5px;
+      line-height: 2;
+      color: rgba(255,255,255,0.8);
+    }
+
+
+    /* ---------------------
+       SOBRE - TEXTO
+    --------------------- */
+
+    .about-content {
+      position: relative;
+      z-index: 5;
+      max-width: 780px;
+      padding-left: 50px;
+    }
+
+    .about-label {
+      font-size: 11px;
+      letter-spacing: 7px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 35px;
+    }
+
+    .about-title {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+
+      font-size: clamp(54px, 5.2vw, 86px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+
+      margin-bottom: 45px;
+    }
+
+    .about-title em {
+      font-family: "Playfair Display", serif;
+      color: #d8795e;
+      font-weight: 400;
+    }
+
+    .about-text {
+      max-width: 670px;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      color: rgba(243,238,228,0.85);
+    }
+
+    .about-text strong {
+      color: white;
+      font-weight: 500;
+    }
+
+
+    /* ---------------------
+       HABILIDADES
+    --------------------- */
+
+    .skills {
+      margin-top: 45px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid rgba(255,255,255,0.25);
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .skill {
+      padding: 20px 10px;
+
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .skill:nth-child(odd) {
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .skill:nth-child(1),
+    .skill:nth-child(2) {
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .skill span {
+      color: #d8795e;
+      margin-right: 12px;
+    }
+
+
+    /* ---------------------
+       FRASE FINAL
+    --------------------- */
+
+    .about-quote {
+      margin-top: 45px;
+
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+
+      font-size: 26px;
+      line-height: 1.4;
+
+      color: var(--creme);
+    }
+
+
+    /* =====================================================
+       RESPONSIVO
+    ===================================================== */
+
+    @media (max-width: 1100px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        min-height: 100vh;
+        padding: 90px 7%;
+      }
+
+      .hero-right {
+        min-height: 800px;
+      }
+
+      .name {
+        font-size: 110px;
+      }
+
+      .photo-wrapper {
+        width: 55%;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        height: 500px;
+      }
+
+      .about-content {
+        padding-left: 0;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .portfolio-year {
+        left: 7%;
+      }
+
+      .hero-left {
+        padding: 100px 7% 70px;
+      }
+
+      .name {
+        font-size: 76px;
+        line-height: 0.8;
+      }
+
+      .profession {
+        font-size: 13px;
+        letter-spacing: 6px;
+      }
+
+      .hero-copy h2 {
+        font-size: 42px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-right {
+        min-height: 650px;
+      }
+
+      .photo-wrapper {
+        width: 72%;
+        height: 65%;
+        left: 8%;
+      }
+
+      .green-shape {
+        width: 65%;
+      }
+
+      .terracotta-shape {
+        width: 70%;
+      }
+
+      .keywords {
+        right: 3%;
+        font-size: 8px;
+        letter-spacing: 2px;
+      }
+
+      .possibilities {
+        font-size: 27px;
+        width: 170px;
+      }
+
+      .about {
+        padding: 100px 7%;
+      }
+
+      .about-visual {
+        height: 390px;
+      }
+
+      .about-circle {
+        width: 360px;
+        height: 360px;
+      }
+
+      .about-terracotta {
+        width: 220px;
+        height: 310px;
+        left: 70px;
+      }
+
+      .about-word {
+        font-size: 52px;
+        left: 15px;
+        top: 180px;
+      }
+
+      .about-mini {
+        left: 80px;
+        bottom: 10px;
+      }
+
+      .about-title {
+        font-size: 50px;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .skill {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       01 — CAPA
+  ====================================================== -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-left">
+
+      <div class="portfolio-year">
+        PORTFÓLIO / 2026
+      </div>
+
+      <h1 class="name">
+        <span>Bell</span>
+        <span>Araújo</span>
+      </h1>
+
+      <div class="profession">
+        UGC CREATOR
+      </div>
+
+      <div class="hero-copy">
+
+        <h2>
+          Ideias <em>reais.</em><br>
+          Conteúdo que <em>aproxima.</em>
+        </h2>
+
+        <p class="hero-description">
+          Comunicação, criatividade e estratégia encontrando uma nova forma de conectar marcas e pessoas.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">
+            TECH & APPS
+          </span>
+
+          <span class="tag">
+            BEAUTY & SELF-CARE
+          </span>
+
+          <span class="tag">
+            LIFESTYLE & HOME
+          </span>
+
+          <span class="tag">
+            OUTRAS POSSIBILIDADES
+          </span>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+          <a href="#sobre" class="btn btn-primary">
+            CONHEÇA MAIS
+            <span class="arrow">↓</span>
+          </a>
+
+          <a href="#contato" class="btn btn-outline">
+            CONTATO
+            <span class="arrow">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-right">
+
+      <div class="terracotta-shape"></div>
+
+      <div class="green-shape"></div>
+
+
+      <div class="photo-wrapper">
+
+        <img
+          src="images/bel.jpeg"
+          alt="Bell Araújo"
+        >
+
+      </div>
+
+
+      <div class="keywords">
+        COMUNICAÇÃO<br>
+        CRIATIVIDADE<br>
+        ESTRATÉGIA<br>
+        CONTEÚDO
+      </div>
+
+
+      <div class="possibilities">
+
+        criando<br>
+        novas<br>
+        possibilidades
+
+        <div class="heart">
+          ♡
+        </div>
+
+      </div>
+
+
+      <div class="number">
+        01 / 05
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       02 — SOBRE
+  ====================================================== -->
+
+  <section class="about" id="sobre">
+
+
+    <div class="about-number">
+      02 / 05
+    </div>
+
+
+    <div class="about-visual">
+
+      <div class="about-circle"></div>
+
+      <div class="about-terracotta"></div>
+
+      <div class="about-word">
+        sobre
+      </div>
+
+      <div class="about-mini">
+        COMUNICAÇÃO<br>
+        VISÃO<br>
+        CRIATIVIDADE<br>
+        ESTRATÉGIA
+      </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+
+      <div class="about-label">
+        SOBRE MIM
+      </div>
+
+
+      <h2 class="about-title">
+
+        Criatividade com <em>intenção.</em><br>
+
+        Estratégia com personalidade.
+
+      </h2>
+
+
+      <div class="about-text">
+
+        <p>
+          Sou <strong>Bell Araújo</strong>, profissional de marketing e comunicação,
+          explorando uma nova forma de transformar estratégia, criatividade e olhar
+          estético em conteúdo para marcas.
+        </p>
+
+        <p>
+          Minha experiência com branding, comunicação e construção de identidade
+          me ensinou que conteúdo não precisa apenas chamar atenção —
+          <strong>ele precisa fazer sentido para quem está do outro lado.</strong>
+        </p>
+
+        <p>
+          No UGC, quero unir essa visão estratégica à criação de conteúdos
+          naturais, próximos e visualmente bem construídos.
+        </p>
+
+      </div>
+
+
+      <div class="skills">
+
+        <div class="skill">
+          <span>01</span>
+          MARKETING
+        </div>
+
+        <div class="skill">
+          <span>02</span>
+          BRANDING
+        </div>
+
+        <div class="skill">
+          <span>03</span>
+          CONTEÚDO
+        </div>
+
+        <div class="skill">
+          <span>04</span>
+          ESTRATÉGIA
+        </div>
+
+      </div>
+
+
+      <div class="about-quote">
+
+        “Conteúdo com estética,<br>
+        intenção e verdade.”
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- Marcador temporário para o botão Contato -->
+  <div id="contato"></div>
+
+
+</body>
+</html>
